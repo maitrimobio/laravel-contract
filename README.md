@@ -85,7 +85,7 @@ For example, take a look at this event listener:
         }
     }
     
-**Send welcome mail to user via Listener Using.**
+**Send welcome mail to user via Listener.**
 
     public function handle(UserRegistered $event)
     {
