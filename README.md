@@ -15,6 +15,8 @@ While working with Laravel contracts, please note the following important points
      `1. It is mandatory to define facades in the constructor of a class.
      2. Contracts are explicitly defined in the classes and you need not define the contracts in constructors.`
 
+**Create Repository for Order use Contracts Cache for Order Repo**
+
     <?php
 
     namespace App\Orders;
@@ -82,25 +84,6 @@ For example, take a look at this event listener:
         public function handle(OrderWasPlaced $event)
         {
             //
-        }
-    }
-    
-**Send welcome mail to user via Listener.**
-
-    public function handle(UserRegistered $event)
-    {
-        $data = array('name' => $event->newuser['name'], 'email' => $event->newuser['email']);
-        try {
-            if (!empty($data['email'])) {
-                Mail::send(['text' => 'mail'], $data, function ($message) use ($data) {
-                    $message->to($data['email'])->subject
-                    ('Laravel Basic Testing Mail');
-                    $message->from('noreplay@mobiosolution.com');
-                });
-                echo "This is Email Sent to log. Check your log file.";
-            }
-        } catch (\Exception $e) {
-            Log::info('Error' . $e->getMessage());
         }
     }
 
